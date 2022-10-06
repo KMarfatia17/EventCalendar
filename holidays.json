@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Diwali/Deepavali",
+        "name_local": "",
+        "language": "",
+        "description": "",
+        "country": "IN",
+        "location": "India",
+        "type": "National holiday",
+        "date": "10/24/2022",
+        "date_year": "2022",
+        "date_month": "10",
+        "date_day": "24",
+        "week_day": "Monday"
+    },
+    {
+        "name": "Naraka Chaturdasi",
+        "name_local": "",
+        "language": "",
+        "description": "",
+        "country": "IN",
+        "location": "India",
+        "type": "Optional holiday",
+        "date": "10/24/2022",
+        "date_year": "2022",
+        "date_month": "10",
+        "date_day": "24",
+        "week_day": "Monday"
+    }
+]
