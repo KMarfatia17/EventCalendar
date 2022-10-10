@@ -1,10 +1,10 @@
 /* eslint-disable */
 const axios = require("axios");
 const { google } = require("googleapis");
-const Holiday = require("./holidayModel");
+const Event = require("./eventModel");
 // const { OAuth2 } = require("googleapis/build/src/apis/oauth2");
 
-exports.getAllHolidays = async (req, res, next) => {
+exports.getAllEvents = async (req, res, next) => {
 	// const { OAuth2 } = google.auth;
 
 	// const oAuth2Client = new OAuth2(
@@ -101,13 +101,65 @@ exports.getAllHolidays = async (req, res, next) => {
 	// console.log("hey", calendar.context.google);
 	//console.log("fex value", fex.data);
 
+	// console.log("get status entered", req.params.date);
+	// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
+	// const eventDetails = await Event.find({});
+	// console.log("hi from all events");
+
+	const url = "https://api.predicthq.com/v1/events/";
+	// const url = "https://catfact.ninja/fact";
+	await axios(url, {
+		headers: {
+			Authorization: `Bearer ${process.env.EVENT_API_KEY}`,
+		},
+	})
+		.then((response) => {
+			res.status(200).json({ status: "success", data: response.data.results });
+		})
+		.catch((response) => {
+			res.status(400).json({ status: "failure" });
+		});
+
+	// const encodedParams = new URLSearchParams();
+	// encodedParams.append("consumerKey", "<REQUIRED>");
+	// encodedParams.append("consumerSecret", "<REQUIRED>");
+	// encodedParams.append("appKey", "<REQUIRED>");
+
+	// const options = {
+	// 	method: "POST",
+	// 	url: "https://eventfulvolodimir-kudriachenkov1.p.rapidapi.com/searchEvents",
+	// 	headers: {
+	// 		"content-type": "application/x-www-form-urlencoded",
+	// 		"X-RapidAPI-Key": "6cc6969e35msh21cd15cff0c4d2fp1bae92jsnddd55824ef5a",
+	// 		"X-RapidAPI-Host": "Eventfulvolodimir-kudriachenkoV1.p.rapidapi.com",
+	// 	},
+	// 	data: encodedParams,
+	// };
+	// console.log("no");
+	// axios
+	// 	.request(options)
+	// 	.then(function (response) {
+	// 		console.log("hey");
+	// 		console.log(response.data);
+	// 	})
+	// 	.catch(function (error) {
+	// 		console.log("hey error");
+	// 		console.error(error);
+	// 	});
+
+	//next();
+};
+
+exports.getEventStatus = async (req, res, next) => {
 	try {
 		// console.log("get status entered", req.params.date);
 		// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
-		const holidayDetails = await Holiday.find({});
+		const eventDetails = await Event.findOne({
+			date: { $eq: req.params.date },
+		});
 		res.status(200).json({
 			status: "success",
-			data: holidayDetails,
+			data: eventDetails,
 		});
 	} catch (error) {
 		res.status(402).json({
@@ -119,28 +171,7 @@ exports.getAllHolidays = async (req, res, next) => {
 	// next();
 };
 
-exports.getHolidayStatus = async (req, res, next) => {
-	try {
-		// console.log("get status entered", req.params.date);
-		// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
-		const holidayDetails = await Holiday.findOne({
-			date: { $eq: req.params.date },
-		});
-		res.status(200).json({
-			status: "success",
-			data: holidayDetails,
-		});
-	} catch (error) {
-		res.status(402).json({
-			status: "failure",
-			message: error.message,
-		});
-	}
-
-	//next();
-};
-
-exports.insertHoliday = async (req, res, next) => {
+exports.insertEvent = async (req, res, next) => {
 	try {
 		// req.body.date = new Date(req.body.date);
 		console.log("controller called", req.body.date);
@@ -157,11 +188,11 @@ exports.insertHoliday = async (req, res, next) => {
 		// req.body.date = new Date(req.body.date);
 		// req.body.date = new Date(req.body.date);
 		// console.log("again", req.body.date);
-		const holidayDetails = await Holiday.create(req.body);
+		const eventDetails = await Event.create(req.body);
 
 		res.status(200).json({
 			status: "success",
-			data: holidayDetails,
+			data: eventDetails,
 		});
 	} catch (error) {
 		res.status(401).json({
@@ -173,9 +204,9 @@ exports.insertHoliday = async (req, res, next) => {
 	// next();
 };
 
-exports.updateHolidayStatus = async (req, res, next) => {
+exports.updateEventStatus = async (req, res, next) => {
 	try {
-		const holidayDetails = await Holiday.findByIdAndUpdate(
+		const eventDetails = await Event.findByIdAndUpdate(
 			req.params.id,
 			req.body
 			// { upsert: true }
@@ -196,7 +227,7 @@ exports.updateHolidayStatus = async (req, res, next) => {
 
 		res.status(200).json({
 			status: "success",
-			data: holidayDetails,
+			data: eventDetails,
 		});
 	} catch (error) {
 		res.status(401).json({
@@ -208,9 +239,9 @@ exports.updateHolidayStatus = async (req, res, next) => {
 	// next();
 };
 
-exports.deleteHoliday = async (req, res, next) => {
+exports.deleteEvent = async (req, res, next) => {
 	try {
-		const dayDetails = await Holiday.remove({ _id: req.params.id });
+		const eventDetails = await Event.remove({ _id: req.params.id });
 		res.status(200).json({
 			status: "success",
 		});

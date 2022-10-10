@@ -2,12 +2,12 @@ const express = require("express");
 const holidayController = require("./holidayController");
 
 const router = express.Router();
-console.log("entered routes");
-const date = new Date();
-const today =
-	date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+console.log("entered holiday routes");
+// const date = new Date();
+// const today =
+// 	date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
-console.log("todays date", today);
+// console.log("todays date", today);
 
 router
 	.route("/")
