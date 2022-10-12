@@ -2,16 +2,36 @@ const mongoose = require("mongoose");
 const moment = require("moment");
 
 const holidaySchema = mongoose.Schema({
-	name: String,
+	kind: String,
+	etag: String,
+	id: String,
+	Status: String,
+	htmlLink: String,
+	created: Date,
+	updated: Date,
+	summary: String,
 	description: String,
-	country: String,
-	location: String,
-	type: String,
-	date: String,
-	date_year: Number,
-	date_month: Number,
-	date_day: Number,
-	week_day: String,
+	creator: {
+		email: String,
+		displayName: String,
+		self: Boolean,
+	},
+	organizer: {
+		email: String,
+		displayName: String,
+		self: Boolean,
+	},
+	start: {
+		date: String,
+	},
+	end: {
+		date: String,
+	},
+	transparency: String,
+	visibility: String,
+	iCalUID: String,
+	sequence: Number,
+	eventType: String,
 });
 
 // daySchema.pre("save", function (next) {
@@ -24,10 +44,7 @@ const holidaySchema = mongoose.Schema({
 // 	next();
 // });
 
-holidaySchema.index(
-	{ date_day: 1, date_month: 1, date_year: 1, name: 1 },
-	{ unique: true }
-);
+holidaySchema.index({ start: 1, end: 1, summary: 1 }, { unique: true });
 
 const Holiday = mongoose.model("Holiday", holidaySchema);
 

@@ -8,14 +8,16 @@ exports.getAllHolidays = async (req, res, next) => {
 	// const { OAuth2 } = google.auth;
 
 	// const oAuth2Client = new OAuth2(
-	// 	"http://764877352420-qkr8q98b55gcol6tm6cmd2ci52b61pq9.apps.googleusercontent.com",
-	// 	"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"
+	// 	"764877352420-cop1652kh47r26poesagm465mla9k8ui.apps.googleusercontent.com",
+	// 	"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"
 	// );
 
 	// oAuth2Client.setCredentials({
 	// 	refresh_token:
 	// 		"1//04kZHH8oQGHcuCgYIARAAGAQSNwF-L9IrZUCW89nP2yWvrtss-Hmyg1G4XwCkVuukNZpdnKp7hAh_hQ66sfyAi0ul0tfrS9pbAZ",
 	// });
+
+	// const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
 
 	// const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 	// const GOOGLE_PRIVATE_KEY = "<private-key>";
@@ -30,7 +32,7 @@ exports.getAllHolidays = async (req, res, next) => {
 	// 	SCOPES
 	// );
 
-	// const url = `${process.env.BASE_CALENDAR_URL}/${process.env.CALENDAR_REGION}#${process.env.BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY}`;
+	const url = `${process.env.BASE_CALENDAR_URL}/${process.env.CALENDAR_REGION}%23${process.env.BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY}/events?key=${process.env.API_KEY}`;
 	// const url =
 	// 	"https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com";
 	// const url2 = "https://catfact.ninja/fact";
@@ -67,19 +69,29 @@ exports.getAllHolidays = async (req, res, next) => {
 	// 	// 	},
 	// 	// },
 	// )
+
 	// await axios(url, {
 	// 	headers: {
 	// 		Authorization: oAuth2Client,
 	// 	},
 	// })
-	// 	.then((response) => {
-	// 		console.log("see response".response.data);
-	// 		res.status(200).json({ info: response.data });
-	// 	})
-	// 	.catch((response) => {
-	// 		console.log("error response", response.data);
-	// 		res.status(400).json({ info: response.data });
-	// 	});
+	var config = {
+		method: "get",
+		url,
+		headers: {},
+	};
+	// await axios(url, {
+	// 	headers: { "content-type": "application/x-www-form-urlencoded" },
+	// })
+	await axios(config)
+		.then((response) => {
+			// console.log("success response", response);
+			res.status(200).json({ status: "success", info: response.data.items });
+		})
+		.catch((response) => {
+			// console.log("error response", response);
+			res.status(400).json({ status: "failure", info: response });
+		});
 
 	// .then(function (response) {
 	// 	//handle success
@@ -96,25 +108,24 @@ exports.getAllHolidays = async (req, res, next) => {
 	// 	console.log(response);
 	// });
 
-	// const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
-
 	// console.log("hey", calendar.context.google);
 	//console.log("fex value", fex.data);
 
-	try {
-		// console.log("get status entered", req.params.date);
-		// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
-		const holidayDetails = await Holiday.find({});
-		res.status(200).json({
-			status: "success",
-			data: holidayDetails,
-		});
-	} catch (error) {
-		res.status(402).json({
-			status: "failure",
-			message: error.message,
-		});
-	}
+	//1) code to keep
+	// try {
+	// 	// console.log("get status entered", req.params.date);
+	// 	// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
+	// 	const holidayDetails = await Holiday.find({});
+	// 	res.status(200).json({
+	// 		status: "success",
+	// 		data: holidayDetails,
+	// 	});
+	// } catch (error) {
+	// 	res.status(402).json({
+	// 		status: "failure",
+	// 		message: error.message,
+	// 	});
+	// }
 
 	// next();
 };
