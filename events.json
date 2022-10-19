@@ -1,0 +1,638 @@
+[
+    {
+        "relevance": 0,
+        "id": "37pXR6CtV2uGon2hbV",
+        "title": "Magic Up Close Early Show",
+        "description": "",
+        "category": "performing-arts",
+        "labels": [
+            "entertainment",
+            "performing-arts"
+        ],
+        "rank": 33,
+        "local_rank": 51,
+        "aviation_rank": null,
+        "phq_attendance": 138,
+        "entities": [
+            {
+                "formatted_address": "810 S Las Vegas Blvd\nLas Vegas, NV 89101\nUnited States of America",
+                "type": "venue",
+                "name": "Las Vegas Magic Theater",
+                "entity_id": "v62VmZsRDnG7pKf5krM6Hi"
+            }
+        ],
+        "duration": 4200,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T01:10:00Z",
+        "updated": "2022-10-09T02:26:26Z",
+        "first_seen": "2022-08-09T00:45:18Z",
+        "timezone": "America/Los_Angeles",
+        "location": [
+            -115.1464406,
+            36.1607685
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.1464406,
+                    36.1607685
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "5509151",
+                "5501879",
+                "5506956"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "3N25eNhwaTeQFM38pj",
+        "title": "Australian Open 2023 - Rod Laver Arena - Single Session (Day)",
+        "description": "For more information on ticketing, including the concession and kids tickets policy",
+        "category": "sports",
+        "labels": [
+            "sport",
+            "tennis"
+        ],
+        "rank": 74,
+        "local_rank": 86,
+        "aviation_rank": 0,
+        "phq_attendance": 15000,
+        "entities": [
+            {
+                "formatted_address": "",
+                "type": "venue",
+                "name": "Melbourne Park",
+                "entity_id": "fnFZvWPsbZMHswBaq3wuq9"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "updated": "2022-09-27T00:04:42Z",
+        "first_seen": "2022-09-27T00:02:34Z",
+        "timezone": "Australia/Melbourne",
+        "location": [
+            144.98005,
+            -37.82267
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.98005,
+                    -37.82267
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "AU",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255151",
+                "2077456",
+                "2145234",
+                "7839805",
+                "6952202"
+            ],
+            [
+                "6295630",
+                "6255151",
+                "2077456",
+                "2145234",
+                "7839805",
+                "2158177"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "3dP7HNJV8RjRwfLGFC",
+        "title": "New York Rangers vs Columbus Blue Jackets",
+        "description": "",
+        "category": "sports",
+        "labels": [
+            "ice-hockey",
+            "nhl",
+            "sport"
+        ],
+        "rank": 73,
+        "local_rank": 93,
+        "aviation_rank": 44,
+        "phq_attendance": 14895,
+        "entities": [
+            {
+                "formatted_address": "200 West Nationwide Boulevard\nColumbus, OH 43215\nUnited States of America",
+                "type": "venue",
+                "name": "Nationwide Arena",
+                "entity_id": "mhUXFWQ5ASrErLWQfU8DL4"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "predicted_end": "2023-01-17T02:40:00Z",
+        "updated": "2022-10-19T01:01:34Z",
+        "first_seen": "2022-07-07T00:38:06Z",
+        "timezone": "America/New_York",
+        "location": [
+            -83.0059922,
+            39.9692575
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.0059922,
+                    39.9692575
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "5165418",
+                "4512214",
+                "4509177"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "4npqyyscxDMAKQVUt8",
+        "title": "Loyola Greyhounds Men's Basketball vs Lehigh University",
+        "description": "",
+        "category": "sports",
+        "labels": [
+            "basketball",
+            "ncaa",
+            "sport"
+        ],
+        "rank": 0,
+        "local_rank": 0,
+        "aviation_rank": null,
+        "phq_attendance": null,
+        "entities": [
+            {
+                "formatted_address": "4501 North Charles Street\nBaltimore, MD 21210\nUnited States of America",
+                "type": "venue",
+                "name": "Loyola University Maryland",
+                "entity_id": "WzcKsNLF5ZFL5Xk7MzPFVu"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "predicted_end": "2023-01-17T01:35:00Z",
+        "updated": "2022-09-27T01:06:22Z",
+        "first_seen": "2022-09-27T00:51:40Z",
+        "timezone": "America/New_York",
+        "location": [
+            -76.6210078,
+            39.3463882
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.6210078,
+                    39.3463882
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "4361885",
+                "4347820",
+                "4354480"
+            ],
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "4361885",
+                "4347820",
+                "4347778"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "5LQ2gw3mkuVz4SJtWa",
+        "title": "Purdue Fort Wayne Mastodons",
+        "description": "",
+        "category": "sports",
+        "labels": [
+            "basketball",
+            "ncaa",
+            "sport"
+        ],
+        "rank": 71,
+        "local_rank": 96,
+        "aviation_rank": 0,
+        "phq_attendance": 11477,
+        "entities": [
+            {
+                "formatted_address": "4000 Parnell Avenue\nFort Wayne, IN 46805\nUnited States of America",
+                "type": "venue",
+                "name": "Allen County War Memorial Coliseum",
+                "entity_id": "m4MT7XWDxZwjiYAP4USqLR"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "predicted_end": "2023-01-17T01:35:00Z",
+        "updated": "2022-10-13T00:42:39Z",
+        "first_seen": "2022-10-13T00:32:05Z",
+        "timezone": "America/Indiana/Indianapolis",
+        "location": [
+            -85.123583,
+            41.115007
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -85.123583,
+                    41.115007
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "4921868",
+                "4917555",
+                "4924281"
+            ],
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "4921868",
+                "4917555",
+                "4920423"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "5cySiMtNPbNMk3HyQK",
+        "title": "Fiona Foley: Veiled Paradise",
+        "description": "Veiled Paradise surveys three decades of Badtjala artist Dr. Fiona Foley’s practice.\n\nThis leading contemporary Aboriginal artist’s work is informed by her ancestral connection to K’gari/Fraser Island, drawing equally upon its serene beauty and the history of systemic violence and sexual exploitation perpetrated on its shores.\n\nIncorporating original research around the Government- regulated opium trade and of the connection between sex and violence on the frontier and beyond, the artist refutes colonisation’s attempts to erase her people and their histories. Tirelessly, through painting, photography, film, sculpture and printmaking, Foley gives voice to the dispossessed.\n\nFoley flips the lens of ethnography in the restaging of history and events in her artwork amplifying the voices and perspectives of Aboriginal people. She is empowered by her matrilineal lineage, illuminating the exploitation of Aboriginal women and outing everyday racism and sexism.\n\nSpanning over thirty years, Foley’s practice—from the founding of Boomalli Aboriginal Artists Cooperative in Redfern in the mid-1980s, to now, Veiled Paradise sees some of Foley’s most iconic works and some of her less-seen works put into the spotlight. This is the first major survey of the artist’s practice initiated in Queensland, and curated by an Aboriginal researcher, writer and curator—Angelina Hurley.",
+        "category": "expos",
+        "labels": [
+            "expo"
+        ],
+        "rank": 45,
+        "local_rank": 72,
+        "aviation_rank": null,
+        "phq_attendance": 562,
+        "entities": [
+            {
+                "entity_id": "wmXdWz695tcfkJ6Vm6NhMC",
+                "name": "Fiona Foley: Veiled Paradise",
+                "type": "event-group",
+                "category": "expos",
+                "labels": [
+                    "event-group",
+                    "expo",
+                    "recurring"
+                ]
+            },
+            {
+                "formatted_address": "166 Old Maryborough Road\nScarness QLD 4655\nAustralia",
+                "type": "venue",
+                "name": "Hervey Bay Regional Gallery",
+                "entity_id": "YB88rCMLfY4frCSpNKLkH4"
+            }
+        ],
+        "duration": 21600,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T06:00:00Z",
+        "updated": "2022-08-25T06:41:19Z",
+        "first_seen": "2022-08-25T06:40:24Z",
+        "timezone": "Australia/Brisbane",
+        "location": [
+            152.8375553,
+            -25.2838017
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    152.8375553,
+                    -25.2838017
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "AU",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255151",
+                "2077456",
+                "2152274",
+                "7839579",
+                "2145361"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": false,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "8J6ARRcmRdfiu2xRb9",
+        "title": "All Star Stand Up Comedy",
+        "description": "",
+        "category": "performing-arts",
+        "labels": [
+            "comedy",
+            "entertainment",
+            "performing-arts"
+        ],
+        "rank": 34,
+        "local_rank": 36,
+        "aviation_rank": 0,
+        "phq_attendance": 164,
+        "entities": [
+            {
+                "formatted_address": "318 West 53rd Street\nNew York, NY 10019\nUnited States of America",
+                "type": "venue",
+                "name": "Broadway Comedy Club",
+                "entity_id": "iCNS765DCnUXnPEsbme4CK"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "updated": "2022-09-02T02:45:10Z",
+        "first_seen": "2022-09-02T00:48:00Z",
+        "timezone": "America/New_York",
+        "location": [
+            -73.9856685,
+            40.7644077
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9856685,
+                    40.7644077
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "5128638",
+                "5128594",
+                "6332416"
+            ],
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "5128638",
+                "5128594",
+                "7250946",
+                "5125771"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "8JVhgZsWVHv5RPgPzr",
+        "title": "Vanderbilt Commodores vs Arkansas Razorbacks Womens Basketball",
+        "description": "",
+        "category": "sports",
+        "labels": [
+            "basketball",
+            "ncaa",
+            "sport"
+        ],
+        "rank": 67,
+        "local_rank": 89,
+        "aviation_rank": 0,
+        "phq_attendance": 6733,
+        "entities": [
+            {
+                "formatted_address": "1270 Nolan Richardson Drive\nFayetteville, AR 72701\nUnited States of America",
+                "type": "venue",
+                "name": "Bud Walton Arena",
+                "entity_id": "qrt64HNUknGPFufPnC2waK"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "predicted_end": "2023-01-17T01:35:00Z",
+        "updated": "2022-10-19T00:31:44Z",
+        "first_seen": "2022-08-18T00:29:43Z",
+        "timezone": "America/Chicago",
+        "location": [
+            -94.1780556,
+            36.0616667
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -94.1780556,
+                    36.0616667
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "4099753",
+                "4135394",
+                "4121159"
+            ],
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "4099753",
+                "4135394",
+                "4110486"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "8Jo7Efv6sJaGcUkdVm",
+        "title": "Princeton Tigers vs Pennsylvania Quakers Basketball",
+        "description": "",
+        "category": "sports",
+        "labels": [
+            "basketball",
+            "ncaa",
+            "sport"
+        ],
+        "rank": 67,
+        "local_rank": 75,
+        "aviation_rank": 0,
+        "phq_attendance": 6736,
+        "entities": [
+            {
+                "formatted_address": "223 South 33rd Street\nPhiladelphia, PA 19104\nUnited States of America",
+                "type": "venue",
+                "name": "The Palestra",
+                "entity_id": "RfWiLY5ZhGRRfbpBH7ALcb"
+            }
+        ],
+        "duration": 0,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T00:00:00Z",
+        "predicted_end": "2023-01-17T01:35:00Z",
+        "updated": "2022-10-19T00:30:14Z",
+        "first_seen": "2022-09-24T00:39:42Z",
+        "timezone": "America/New_York",
+        "location": [
+            -75.1887032,
+            39.9513911
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.1887032,
+                    39.9513911
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "US",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255149",
+                "6252001",
+                "6254927",
+                "5205788",
+                "4560349"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    },
+    {
+        "relevance": 0,
+        "id": "9DwAozP7gkQWWBgK8T",
+        "title": "Hello Coffee Meet the Maker",
+        "description": "Coffee tasting and info session with the roasters from Hello Coffee. Morning tea is included, along with a variety of coffees to sample.\n\nBook your seat for a personal coffee tasting session with one of the principal roasters from Hello Coffee. You’ll be taken through the process of how coffee makes its way from the farm to your cup, how it’s roasted, and how the best coffees are selected. Morning tea is included with the class along with a variety of coffees to sample.",
+        "category": "community",
+        "labels": [
+            "community"
+        ],
+        "rank": 0,
+        "local_rank": 0,
+        "aviation_rank": null,
+        "phq_attendance": null,
+        "entities": [
+            {
+                "entity_id": "vy53FNTAHteWTYFWhn4jUc",
+                "name": "Hello Coffee Meet the Maker",
+                "type": "event-group",
+                "category": "community",
+                "labels": [
+                    "community",
+                    "event-group",
+                    "recurring"
+                ]
+            }
+        ],
+        "duration": 3600,
+        "start": "2023-01-17T00:00:00Z",
+        "end": "2023-01-17T01:00:00Z",
+        "updated": "2022-07-26T01:04:56Z",
+        "first_seen": "2022-02-17T06:42:09Z",
+        "timezone": "Australia/Melbourne",
+        "location": [
+            143.6705576,
+            -38.7592016
+        ],
+        "geo": {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    143.6705576,
+                    -38.7592016
+                ]
+            }
+        },
+        "scope": "locality",
+        "country": "AU",
+        "place_hierarchies": [
+            [
+                "6295630",
+                "6255151",
+                "2077456",
+                "2145234",
+                "7839539",
+                "2177810"
+            ]
+        ],
+        "state": "active",
+        "brand_safe": true,
+        "private": false
+    }
+]

@@ -135,7 +135,7 @@ exports.getHolidayStatus = async (req, res, next) => {
 		// console.log("get status entered", req.params.date);
 		// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
 		const holidayDetails = await Holiday.findOne({
-			date: { $eq: req.params.date },
+			"start.date": { $eq: req.params.date },
 		});
 		res.status(200).json({
 			status: "success",
@@ -189,7 +189,6 @@ exports.updateHolidayStatus = async (req, res, next) => {
 		const holidayDetails = await Holiday.findByIdAndUpdate(
 			req.params.id,
 			req.body
-			// { upsert: true }
 		);
 		// console.log("holiday details ", holidayDetails);
 		// holidayDetails.description = req.body.description;
@@ -201,7 +200,7 @@ exports.updateHolidayStatus = async (req, res, next) => {
 		// holidayDetails.date_month = req.body.date_month;
 		// holidayDetails.date_day = req.body.date_day;
 		// holidayDetails.week_day = req.body.week_day;
-
+		console.log("body", req.body);
 		// find gives an array and array.save() does not work so used finOne => object
 		// await holidayDetails.save();
 

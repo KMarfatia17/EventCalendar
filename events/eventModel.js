@@ -2,36 +2,43 @@ const mongoose = require("mongoose");
 const moment = require("moment");
 
 const eventSchema = mongoose.Schema({
-	kind: String,
-	etag: String,
+	relevance: Number,
 	id: String,
-	Status: String,
-	htmlLink: String,
-	created: Date,
-	updated: Date,
-	summary: String,
+	title: String,
 	description: String,
-	creator: {
-		email: String,
-		displayName: String,
-		self: Boolean,
+	category: String,
+	labels: [[String]],
+	rank: Number,
+	local_rank: Number,
+	aviation_rank: String,
+	phq_attendance: Number,
+	entities: [
+		{
+			formatted_address: String,
+			type: { type: String },
+			name: String,
+			entity_id: String,
+		},
+	],
+	duration: Number,
+	start: Date,
+	end: Date,
+	updated: Date,
+	first_seen: Date,
+	timezone: String,
+	location: [[Number]],
+	geo: {
+		geometry: {
+			type: { type: String },
+			coordinates: [[Number]],
+		},
 	},
-	organizer: {
-		email: String,
-		displayName: String,
-		self: Boolean,
-	},
-	start: {
-		date: String,
-	},
-	end: {
-		date: String,
-	},
-	transparency: String,
-	visibility: String,
-	iCalUID: String,
-	sequence: Number,
-	eventType: String,
+	scope: String,
+	country: String,
+	place_hierarchies: [[String]],
+	state: String,
+	brand_safe: Boolean,
+	private: Boolean,
 });
 
 // daySchema.pre("save", function (next) {
@@ -44,7 +51,10 @@ const eventSchema = mongoose.Schema({
 // 	next();
 // });
 
-eventSchema.index({ start: 1, end: 1, summary: 1 }, { unique: true });
+eventSchema.index(
+	{ start: 1, end: 1, title: 1, description: 1 },
+	{ unique: true }
+);
 
 const Event = mongoose.model("Event", eventSchema);
 

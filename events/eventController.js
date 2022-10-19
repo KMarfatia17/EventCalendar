@@ -108,16 +108,34 @@ exports.getAllEvents = async (req, res, next) => {
 
 	const url = "https://api.predicthq.com/v1/events/";
 	// const url = "https://catfact.ninja/fact";
-	await axios(url, {
-		headers: {
-			Authorization: `Bearer ${process.env.EVENT_API_KEY}`,
-		},
-	})
+	// await axios(url, {
+	// 	headers: {
+	// 		Authorization: `Bearer ${process.env.EVENT_API_KEY}`,
+	// 	},
+	// })
+	// 	.then((response) => {
+	// 		res.status(200).json({ status: "success", data: response.data.results });
+	// 	})
+	// 	.catch((response) => {
+	// 		res.status(400).json({ status: "failure" });
+	// 	});
+
+	var config = {
+		method: "get",
+		url,
+		headers: { Authorization: `Bearer ${process.env.EVENT_API_KEY}` },
+	};
+	// await axios(url, {
+	// 	headers: { "content-type": "application/x-www-form-urlencoded" },
+	// })
+	await axios(config)
 		.then((response) => {
-			res.status(200).json({ status: "success", data: response.data.results });
+			// console.log("success response", response);
+			res.status(200).json({ status: "success", info: response.data.results });
 		})
 		.catch((response) => {
-			res.status(400).json({ status: "failure" });
+			// console.log("error response", response);
+			res.status(400).json({ status: "failure", info: response });
 		});
 
 	// const encodedParams = new URLSearchParams();
@@ -155,7 +173,7 @@ exports.getEventStatus = async (req, res, next) => {
 		// console.log("get status entered", req.params.date);
 		// const dayDetails = await Day.findOne({ _id: { $eq: req.params.id } });
 		const eventDetails = await Event.findOne({
-			date: { $eq: req.params.date },
+			start: { $eq: req.params.date },
 		});
 		res.status(200).json({
 			status: "success",
