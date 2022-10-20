@@ -309,6 +309,30 @@ exports.insertEvent = async (req, res, next) => {
 	// next();
 };
 
+exports.insertAllEvents = (predictHQEvents) => {
+	let events = predictHQEvents.map((event) => {
+		let eventObj = {
+			eventId: event.id,
+			eventName: event.title,
+			eventDescription: event.description,
+			eventCategory: event.category,
+			eventDate: event.start,
+			location: produeventt.location,
+		};
+		return eventObj;
+	});
+
+	Event.bulkWrite(
+		events.map((event) => ({
+			updateOne: {
+				filter: { eventId: event.id },
+				update: { $set: event },
+				upsert: true,
+			},
+		}))
+	);
+};
+
 exports.updateEventStatus = async (req, res, next) => {
 	try {
 		const eventDetails = await Event.findByIdAndUpdate(
