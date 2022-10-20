@@ -106,7 +106,94 @@ exports.getAllEvents = async (req, res, next) => {
 	// const eventDetails = await Event.find({});
 	// console.log("hi from all events");
 
-	const url = "https://api.predicthq.com/v1/events/";
+	// Reference Link : https://docs.predicthq.com/start/locations
+	// GET https://api.predicthq.com/v1/events/?within=15mi@40.9513071,-75.9886561&active.gte=2022-10-01&active.lte=2022-12-31&sort=rank HTTP/1.1
+	// GET v1/events/?country=US&category=public-holidays,school-holidays&active.gte=2018-01-01&active.lte=2018-12-31 HTTP/1.1
+
+	// curl -X GET "https://api.predicthq.com/v1/places/?q=Nottingham,England" \
+	// response of above url
+	// {
+	// 	"id": "2641170",
+	// 	"type": "locality",
+	// 	"name": "Nottingham",
+	// 	"county": "Nottingham",
+	// 	"region": "England",
+	// 	"country": "United Kingdom",
+	// 	"country_alpha2": "GB",
+	// 	"country_alpha3": "GBR",
+	// 	"location": [
+	// 		-1.15047,
+	// 		52.9536
+	// 	]
+	// }
+	// https://api.predicthq.com/v1/places/?q=Hazleton,Pennsylvania,United States
+
+	// curl -X GET "https://api.predicthq.com/v1/places/?id=6295630,6255149,6252001,5165418" \
+
+	const url =
+		"https://api.predicthq.com/v1/events/?within=15mi@40.9513071,-75.9886561&active.gte=2022-10-01&active.lte=2022-12-31&sort=rank";
+
+	/*
+		{
+            "relevance": null,
+            "id": "FA6FzfY5zzaa9eTzye",
+            "title": "Election for US House of Representatives",
+            "description": "This election will determine the 435 seats of the House of Representatives of the United States of America. This election is expected to be held by 8 November 2022.",
+            "category": "politics",
+            "labels": [
+                "election",
+                "parliament",
+                "politics"
+            ],
+            "rank": 94,
+            "local_rank": null,
+            "aviation_rank": null,
+            "phq_attendance": null,
+            "entities": [
+                {
+                    "entity_id": "BzeEvuZAgevFWN2dgAky5r",
+                    "name": "Election for US House of Representatives",
+                    "type": "event-group",
+                    "category": "politics",
+                    "labels": [
+                        "event-group"
+                    ]
+                }
+            ],
+            "duration": 86399,
+            "start": "2022-11-08T00:00:00Z",
+            "end": "2022-11-08T23:59:59Z",
+            "updated": "2022-10-04T14:32:56Z",
+            "first_seen": "2021-08-31T06:57:26Z",
+            "timezone": null,
+            "location": [
+                -95.712891,
+                37.09024
+            ],
+            "geo": {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -95.712891,
+                        37.09024
+                    ]
+                }
+            },
+            "scope": "country",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false
+        },
+		*/
+	//const url = "https://api.predicthq.com/v1/events/country=IN";
 	// const url = "https://catfact.ninja/fact";
 	// await axios(url, {
 	// 	headers: {
@@ -188,7 +275,7 @@ exports.getEventStatus = async (req, res, next) => {
 
 	// next();
 };
-
+//https://stackoverflow.com/questions/54714148/mongoose-update-or-insert-many-documents
 exports.insertEvent = async (req, res, next) => {
 	try {
 		// req.body.date = new Date(req.body.date);
