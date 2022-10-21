@@ -303,7 +303,13 @@ exports.insertAllEvents = (predictHQEvents) => {
 				upsert: true,
 			},
 		}))
-	);
+	)
+		.then((response) => {
+			console.log(response);
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 };
 
 exports.updateEventStatus = async (req, res, next) => {
@@ -341,7 +347,7 @@ exports.updateEventStatus = async (req, res, next) => {
 
 exports.deleteEvent = async (req, res, next) => {
 	try {
-		const eventDetails = await Event.remove({ _id: req.params.id });
+		const eventDetails = await Event.deleteOne({ _id: req.params.id });
 		res.status(200).json({
 			status: "success",
 		});
@@ -355,7 +361,7 @@ exports.deleteEvent = async (req, res, next) => {
 
 exports.deleteAllEvents = async (req, res, next) => {
 	try {
-		const eventDetails = await Event.remove({});
+		const eventDetails = await Event.deleteMany({});
 		res.status(200).json({
 			status: "success",
 		});
