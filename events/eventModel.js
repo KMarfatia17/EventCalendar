@@ -7,7 +7,7 @@ const eventSchema = mongoose.Schema({
 	eventDescription: String,
 	eventCategory: String,
 	eventDate: Date,
-	location: [[Number]]
+	location: [[Number]],
 });
 
 // daySchema.pre("save", function (next) {
@@ -20,10 +20,10 @@ const eventSchema = mongoose.Schema({
 // 	next();
 // });
 
-eventSchema.index(
-	{ start: 1, end: 1, title: 1, description: 1 },
-	{ unique: true }
-);
+// eventSchema.index(
+// 	{ start: 1, end: 1, title: 1, description: 1 },
+// 	{ unique: true }
+// );
 
 const Event = mongoose.model("Event", eventSchema);
 

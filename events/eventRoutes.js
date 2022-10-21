@@ -12,7 +12,8 @@ console.log("entered event routes");
 router
 	.route("/")
 	.get(eventController.getAllEvents)
-	.post(eventController.insertEvent);
+	.post(eventController.insertEvent)
+	.delete(eventController.deleteAllEvents);
 
 router
 	.route("/:id")

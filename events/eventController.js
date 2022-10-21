@@ -217,42 +217,19 @@ exports.getAllEvents = async (req, res, next) => {
 	// })
 	await axios(config)
 		.then((response) => {
-			// console.log("success response", response);
-			res.status(200).json({ status: "success", info: response.data.results });
+			// let predictHQEvents = response.data.results;
+			// console.log("hey");
+
+			res.status(200).json({
+				status: "success",
+				info: response.data.results,
+			});
+			this.insertAllEvents(response.data.results);
 		})
-		.catch((response) => {
+		.catch((error) => {
 			// console.log("error response", response);
-			res.status(400).json({ status: "failure", info: response });
+			res.status(400).json({ status: "failure", info: error });
 		});
-
-	// const encodedParams = new URLSearchParams();
-	// encodedParams.append("consumerKey", "<REQUIRED>");
-	// encodedParams.append("consumerSecret", "<REQUIRED>");
-	// encodedParams.append("appKey", "<REQUIRED>");
-
-	// const options = {
-	// 	method: "POST",
-	// 	url: "https://eventfulvolodimir-kudriachenkov1.p.rapidapi.com/searchEvents",
-	// 	headers: {
-	// 		"content-type": "application/x-www-form-urlencoded",
-	// 		"X-RapidAPI-Key": "6cc6969e35msh21cd15cff0c4d2fp1bae92jsnddd55824ef5a",
-	// 		"X-RapidAPI-Host": "Eventfulvolodimir-kudriachenkoV1.p.rapidapi.com",
-	// 	},
-	// 	data: encodedParams,
-	// };
-	// console.log("no");
-	// axios
-	// 	.request(options)
-	// 	.then(function (response) {
-	// 		console.log("hey");
-	// 		console.log(response.data);
-	// 	})
-	// 	.catch(function (error) {
-	// 		console.log("hey error");
-	// 		console.error(error);
-	// 	});
-
-	//next();
 };
 
 exports.getEventStatus = async (req, res, next) => {
@@ -272,8 +249,6 @@ exports.getEventStatus = async (req, res, next) => {
 			message: error.message,
 		});
 	}
-
-	// next();
 };
 //https://stackoverflow.com/questions/54714148/mongoose-update-or-insert-many-documents
 exports.insertEvent = async (req, res, next) => {
@@ -305,8 +280,6 @@ exports.insertEvent = async (req, res, next) => {
 			message: error.message,
 		});
 	}
-
-	// next();
 };
 
 exports.insertAllEvents = (predictHQEvents) => {
@@ -317,11 +290,11 @@ exports.insertAllEvents = (predictHQEvents) => {
 			eventDescription: event.description,
 			eventCategory: event.category,
 			eventDate: event.start,
-			location: produeventt.location,
+			location: event.location,
 		};
 		return eventObj;
 	});
-
+	// console.log("hey");
 	Event.bulkWrite(
 		events.map((event) => ({
 			updateOne: {
@@ -364,8 +337,6 @@ exports.updateEventStatus = async (req, res, next) => {
 			message: error.message,
 		});
 	}
-
-	// next();
 };
 
 exports.deleteEvent = async (req, res, next) => {
@@ -380,6 +351,18 @@ exports.deleteEvent = async (req, res, next) => {
 			message: error.message,
 		});
 	}
+};
 
-	// next();
+exports.deleteAllEvents = async (req, res, next) => {
+	try {
+		const eventDetails = await Event.remove({});
+		res.status(200).json({
+			status: "success",
+		});
+	} catch (error) {
+		res.status(401).json({
+			status: "failure",
+			message: error.message,
+		});
+	}
 };
