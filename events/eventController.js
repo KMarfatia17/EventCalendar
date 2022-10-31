@@ -217,16 +217,19 @@ exports.getAllEvents = async (req, res, next) => {
 	// })
 	await axios(config)
 		.then((response) => {
+			console.log("entered");
 			// let predictHQEvents = response.data.results;
 			// console.log("hey");
-
+			console.log(response);
 			res.status(200).json({
 				status: "success",
 				info: response.data.results,
 			});
+			console.log("hey");
 			this.insertAllEvents(response.data.results);
 		})
 		.catch((error) => {
+			console.log("error entered");
 			// console.log("error response", response);
 			res.status(400).json({ status: "failure", info: error });
 		});
@@ -298,7 +301,7 @@ exports.insertAllEvents = (predictHQEvents) => {
 	Event.bulkWrite(
 		events.map((event) => ({
 			updateOne: {
-				filter: { eventId: event.id },
+				filter: { eventId: event.eventId },
 				update: { $set: event },
 				upsert: true,
 			},

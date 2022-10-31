@@ -87,6 +87,7 @@ exports.getAllHolidays = async (req, res, next) => {
 		.then((response) => {
 			// console.log("success response", response);
 			res.status(200).json({ status: "success", info: response.data.items });
+			this.insertAllHolidays(response.data.items);
 		})
 		.catch((response) => {
 			// console.log("error response", response);
@@ -182,6 +183,36 @@ exports.insertHoliday = async (req, res, next) => {
 	}
 
 	// next();
+};
+
+exports.insertAllHolidays = (GCHolidays) => {
+	let holidays = GCHolidays.map((holiday) => {
+		let holidayObj = {
+			holidayId: holiday.id,
+			holidayName: holiday.summary,
+			holidayDescription: holiday.description,
+			// holidayCategory: holiday.category,
+			holidayDate: holiday.start.date,
+			// location: holiday.location,
+		};
+		return holidayObj;
+	});
+
+	Holiday.bulkWrite(
+		holidays.map((holiday) => ({
+			updateOne: {
+				filter: { holidayId: holiday.holidayId },
+				update: { $set: holiday },
+				upsert: true,
+			},
+		}))
+	)
+		.then((response) => {
+			// console.log(response);
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 };
 
 exports.updateHolidayStatus = async (req, res, next) => {
