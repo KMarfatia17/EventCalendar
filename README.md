@@ -1,4 +1,4 @@
-Predict HQ API for events and stuff like holidays, places, Broadcasts, Features API, Account:
+# Predict HQ API for events and stuff like holidays, places, Broadcasts, Features API, Account:
 
 => https://www.predicthq.com/ - hub of upcoming events and holidays (Paid service and 14 day trial after making an account).
 
@@ -14,12 +14,13 @@ Predict HQ API for events and stuff like holidays, places, Broadcasts, Features 
 
 => https://control.predicthq.com/explorer/events - after login you can refer to this link and filter the data available.
 
-sample data for urls
+## sample data for urls
 
 GET "https://api.predicthq.com/v1/places/?q=Nottingham,England" \
 
 Response of above url :
-{
+
+```{
 "id": "2641170",
 "type": "locality",
 "name": "Nottingham",
@@ -33,12 +34,13 @@ Response of above url :
 52.9536
 ]
 }
+```
 
 GET https://api.predicthq.com/v1/events/?within=15mi@40.9513071,-75.9886561&active.gte=2022-10-01&active.lte=2022-12-31&sort=rank
 
 Response of above url :
 
-{
+```{
 "relevance": null,
 "id": "FA6FzfY5zzaa9eTzye",
 "title": "Election for US House of Representatives",
@@ -83,8 +85,9 @@ Response of above url :
 ]
 }
 }
+```
 
-Code snippets:
+# Code snippets:
 
 //https://stackoverflow.com/questions/54714148/mongoose-update-or-insert-many-documents
 
@@ -96,7 +99,7 @@ const eventDetails = await Event.create(req.body);
     		data: eventDetails,
     	});
 
-removed commented code :
+## removed commented code :
 
     // Day.aggregate([
     	// 	{
@@ -119,7 +122,7 @@ removed commented code :
 
 ---
 
-Google calendar API:
+# Google calendar API:
 
 https://console.cloud.google.com/ - to create google project on the cloud select google calendar API to be enabled.
 
