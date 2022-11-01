@@ -20,19 +20,17 @@ GET "https://api.predicthq.com/v1/places/?q=Nottingham,England" \
 
 Response of above url :
 
-```{
-"id": "2641170",
-"type": "locality",
-"name": "Nottingham",
-"county": "Nottingham",
-"region": "England",
-"country": "United Kingdom",
-"country_alpha2": "GB",
-"country_alpha3": "GBR",
-"location": [
--1.15047,
-52.9536
-]
+```json
+{
+	"id": "2641170",
+	"type": "locality",
+	"name": "Nottingham",
+	"county": "Nottingham",
+	"region": "England",
+	"country": "United Kingdom",
+	"country_alpha2": "GB",
+	"country_alpha3": "GBR",
+	"location": [-1.15047, 52.9536]
 }
 ```
 
@@ -40,50 +38,40 @@ GET https://api.predicthq.com/v1/events/?within=15mi@40.9513071,-75.9886561&acti
 
 Response of above url :
 
-```{
-"relevance": null,
-"id": "FA6FzfY5zzaa9eTzye",
-"title": "Election for US House of Representatives",
-"description": "This election will determine the 435 seats of the House of Representatives of the United States of America. This election is expected to be held by 8 November 2022.",
-"category": "politics",
-"labels": [
-"election",
-"parliament",
-"politics"
-],
-"rank": 94,
-"local_rank": null,
-"aviation_rank": null,
-"phq_attendance": null,
-"entities": [
+```json
 {
-"entity_id": "BzeEvuZAgevFWN2dgAky5r",
-"name": "Election for US House of Representatives",
-"type": "event-group",
-"category": "politics",
-"labels": [
-"event-group"
-]
-}
-],
-"duration": 86399,
-"start": "2022-11-08T00:00:00Z",
-"end": "2022-11-08T23:59:59Z",
-"updated": "2022-10-04T14:32:56Z",
-"first_seen": "2021-08-31T06:57:26Z",
-"timezone": null,
-"location": [
--95.712891,
-37.09024
-],
-"geo": {
-"geometry": {
-"type": "Point",
-"coordinates": [
--95.712891,
-37.09024
-]
-}
+	"relevance": null,
+	"id": "FA6FzfY5zzaa9eTzye",
+	"title": "Election for US House of Representatives",
+	"description": "This election will determine the 435 seats of the House of Representatives of the United States of America. This election is expected to be held by 8 November 2022.",
+	"category": "politics",
+	"labels": ["election", "parliament", "politics"],
+	"rank": 94,
+	"local_rank": null,
+	"aviation_rank": null,
+	"phq_attendance": null,
+	"entities": [
+		{
+			"entity_id": "BzeEvuZAgevFWN2dgAky5r",
+			"name": "Election for US House of Representatives",
+			"type": "event-group",
+			"category": "politics",
+			"labels": ["event-group"]
+		}
+	],
+	"duration": 86399,
+	"start": "2022-11-08T00:00:00Z",
+	"end": "2022-11-08T23:59:59Z",
+	"updated": "2022-10-04T14:32:56Z",
+	"first_seen": "2021-08-31T06:57:26Z",
+	"timezone": null,
+	"location": [-95.712891, 37.09024],
+	"geo": {
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-95.712891, 37.09024]
+		}
+	}
 }
 ```
 
