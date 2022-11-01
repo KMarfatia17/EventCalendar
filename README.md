@@ -77,7 +77,7 @@ Response of above url :
 
 # Code snippets:
 
-//https://stackoverflow.com/questions/54714148/mongoose-update-or-insert-many-documents
+https://stackoverflow.com/questions/54714148/mongoose-update-or-insert-many-documents
 
 req.body.date = req.body.date.replace(/\//g, "-");
 const eventDetails = await Event.create(req.body);
@@ -89,7 +89,7 @@ const eventDetails = await Event.create(req.body);
 
 ## removed commented code :
 
-    // Day.aggregate([
+        // Day.aggregate([
     	// 	{
     	// 		$date: {
     	// 			dateOnly: {
@@ -101,11 +101,8 @@ const eventDetails = await Event.create(req.body);
     	// req.body.date = new Date(req.body.date);
     	// req.body.date = new Date(req.body.date);
     	// console.log("again", req.body.date);
-
         // const dayDetails = await Day.findOne({ \_id: { $eq: req.params.id } }); (imp)
-
         // await holidayDetails.save(); (imp)
-
         // find gives an array and array.save() does not work so used finOne => object (imp)
 
 ---
