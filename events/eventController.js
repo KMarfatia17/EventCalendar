@@ -2,30 +2,58 @@
 const axios = require("axios");
 const { google } = require("googleapis");
 const Event = require("./eventModel");
+const Redis = require("redis");
 // const { OAuth2 } = require("googleapis/build/src/apis/oauth2");
+const REDIS_EXPIRATION = 3600;
+const redisClient = Redis.createClient();
 
 exports.getAllEvents = async (req, res, next) => {
-	const url =
-		"https://api.predicthq.com/v1/events/?within=15mi@40.9513071,-75.9886561&active.gte=2022-10-01&active.lte=2022-12-31&sort=rank";
-
+	//  const url =
+	// 	"https://api.predicthq.com/v1/events/?within=15mi@40.9513071,-75.9886561&active.gte=2022-10-01&active.lte=2022-12-31&sort=rank";
+	const url = `https://www.googleapis.com/calendar/v3/calendars/${process.env.NEW_BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY}/events`;
 	var config = {
 		method: "get",
 		url,
-		headers: { Authorization: `Bearer ${process.env.EVENT_API_KEY}` },
+		// headers: { Authorization: `Bearer ${process.env.EVENT_API_KEY}` },
+		headers: { key: `${process.env.API_KEY}` },
 	};
-	await axios(config)
-		.then((response) => {
-			console.log(response);
-			res.status(200).json({
-				status: "success",
-				info: response.data.results,
-			});
-			console.log("hey");
-			this.insertAllEvents(response.data.results);
-		})
-		.catch((error) => {
-			res.status(400).json({ status: "failure", info: error });
-		});
+	// await axios(config)
+	// 	.then((response) => {
+	// 		console.log(response);
+	// 		res.status(200).json({
+	// 			status: "success",
+	// 			info: response.data.results,
+	// 		});
+	// 		console.log("hey");
+	// 		// this.insertAllEvents(response.data.results);
+	// 	})
+	// 	.catch((error) => {
+	// 		res.status(400).json({ status: "failure", info: error });
+	// 	});
+	console.log("ahinya sudhin ave che");
+	// await redisClient.connect();
+	redisClient.get("redis-events", async (error, results) => {
+		if (error) console.error(error);
+		if (results != null) {
+			console.log("cache hit");
+			return res.json(JSON.parse(results));
+		} else {
+			console.log("cache miss");
+			const {
+				response: {
+					data: { results },
+				},
+			} = await axios(config);
+			redisClient.setEx(
+				"redis-events",
+				REDIS_EXPIRATION,
+				JSON.stringify(results)
+			);
+			res.json(results);
+		}
+	});
+
+	// this.insertAllEvents(response.data.results);
 };
 
 exports.getEventStatus = async (req, res, next) => {
